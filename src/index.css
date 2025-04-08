@@ -1,0 +1,574 @@
+
+/*================================================================================*/
+/* フォームのレイアウト*/
+.Trial-form {
+  position: fixed; 
+  width: 100%;
+  min-height: 100vh;
+}
+
+.Trial-form-backimage {
+  background-repeat:  no-repeat;  /* 画像の繰り返しを指定  */              
+  width:auto; 
+  height:500px;
+  position: relative;
+  z-index: 1;
+}
+.Trial-form-backimage .img1 {
+  position: fixed; 
+  top: 0;
+  left: 0;
+}
+.Trial-form-backimage .img2 {
+  position: fixed; 
+  top: 250px;
+  right: 0px;
+}
+
+.form {
+  position: fixed; 
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 450px;
+  color: #000;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  text-shadow: none;
+  border: 1px solid #000;
+  z-index: 100;
+}
+
+.form-area .form-title {
+  margin-bottom: 50px;
+}
+
+.form-input {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 50px;
+}
+
+.form-input .input-title {
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+.form-input .input-area {
+  margin-left: 100px;
+  margin-right: 100px;
+  width: 100%;
+  font-size: 20px;
+  background-color: #fff;
+  color: #000;
+}
+
+.button-area .sendbtn {
+  margin-left: 165px;
+  padding: 10px 15px 10px 15px;
+  background-color:#0277BD;
+  color: #ffffff;
+  border: 1px solid #0277BD;
+  border-radius: 8px;
+  letter-spacing: 00.5px;
+  cursor: pointer;
+}
+
+/*================================================================================*/
+/* テーブルアイコン・サブタイトルのレイアウト*/
+
+.table-label {
+  display: flex;
+  align-items: center; /* 垂直方向に中央揃え */
+}
+
+.table-sort-label {
+  margin: 0 auto;
+  cursor: pointer;
+}
+
+.table-sort-icon, .table-sort-text {
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+.List-area .SubTitle-area {
+  text-align: left;
+}
+
+.SubTitle-area h2 {
+  margin-top: 50px;
+  margin-bottom: 0px;
+}
+
+
+/*================================================================================*/
+/* ポップアップのレイアウト*/
+
+/* ======共通部分=======*/
+.Popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9998;
+}
+
+.PopupClosebtn {
+  padding: 0px 7px 0px 7px;
+  margin-top: -40px;
+  margin-right: 15px;
+  color: #ffffff;
+  background: #ff0000;
+  float: right;
+  border-radius: 100px;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+}
+.PopupClosebtn:hover,
+.PopupClosebtn:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.Header-title {
+  margin-top: 50px;
+}
+.Popup-button {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+
+/* ======新規追加=======*/
+.Add-popup {
+  width: 450px;
+  color: #000;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  text-shadow: none;
+}
+
+.Add-popup .addbtn {
+  padding: 10px 15px 10px 15px;
+  background-color:#0277BD;
+  color: #ffffff;
+  border: 1px solid #0277BD;
+  border-radius: 8px;
+  letter-spacing: 00.5px;
+  cursor: pointer;
+}
+
+
+/* ======編集=======*/
+.Edit-popup {
+  width: 450px;
+  color: #000;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  text-shadow: none;
+}
+
+.Body-element {
+  text-align: left;
+  margin-left: 80px;
+  margin-right: 80px;
+}
+.Body-element .SubTitle {
+  margin-bottom: 0;
+}
+.Body-element .inputer1 {
+  width: 100%;
+}
+
+.Edit-popup .Popup-button .editbtn {
+  padding: 10px 15px 10px 15px;
+  background-color:#0277BD;
+  color: #ffffff;
+  border: 1px solid #0277BD;
+  border-radius: 8px;
+  letter-spacing: 00.5px;
+  cursor: pointer;
+}
+
+
+/* ======削除=======*/
+.Delete-popup {
+  width: 450px;
+  color: #000;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  text-shadow: none;
+}
+
+.Delete-popup .Popup-button .deletebtn {
+  padding: 10px 15px 10px 15px;
+  margin-left: 15px;
+  margin-right: 15px;
+  width: 110px;
+  background-color:#0277BD;
+  color: #ffffff;
+  border: 1px solid #0277BD;
+  border-radius: 8px;
+  letter-spacing: 00.5px;
+  cursor: pointer;
+}
+
+.Delete-popup .Popup-button .cancelbtn {
+  padding: 10px 15px 10px 15px;
+  margin-left: 15px;
+  margin-right: 15px;
+  width: 110px;
+  background-color:white;
+  color: #0277BD;
+  border: 1px solid #0277BD;
+  border-radius: 8px;
+  letter-spacing: 00.5px;
+  cursor: pointer;
+}
+
+
+/*================================================================================*/
+/* メニューのレイアウト*/
+
+a:-webkit-any-link  {
+  text-decoration: none;
+}
+
+.menu-area {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: calc(100% / 3);
+  height: 100%;
+  background-color:#f5f5f5;
+  border-right: 2px solid #000; /* 1px の黒い実線を引く */
+}
+
+.link-box {
+  display: flex;
+  align-items: center; /* 垂直方向に中央揃え */
+}
+
+.link-icon {
+  margin-left: 50px;
+  margin-right: 35px;
+}
+
+.link-box h1 {
+  color:#000 ;
+}
+
+/*================================================================================*/
+/* 生徒一覧のレイアウト*/
+
+.AllList {
+  position: fixed;
+  top: 0;
+  left: calc(100% / 3);
+  width: calc(100% * 2 / 3);
+  height: 100vh; /* 画面の高さを基準にする */
+  overflow-y: auto; /* 縦スクロールを可能にする */
+  overflow-x: hidden; /* 横スクロールを防ぐ */
+}
+
+.AllList .List-area {
+  margin-left: 30px;
+  margin-right: 30px;
+  margin-bottom: 100px;
+}
+
+
+.Title-area .addbtn {
+  float: right;
+  margin-top: -70px;
+  margin-right: 30px;
+  padding: 10px 15px 10px 15px;
+  background-color:#0277BD;
+  color: #ffffff;
+  border: 1px solid #0277BD;
+  border-radius: 8px;
+  letter-spacing: 00.5px;
+  cursor: pointer;
+}
+
+.button-area {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;  /* 要素間の余白 */
+  margin-left: 20px;
+  margin-right: 20px;
+  text-align: left;
+}
+.button-area .SubTitle-area {
+  margin-left: 5px;
+  width: 100%;
+}
+
+.button-area .team-label {
+  align-items: center; /* 垂直方向に中央揃え */
+  padding: 10px 30px 10px 20px;
+  border-radius: 8px;
+  margin-left: 5px;
+  margin-right: 20px;
+  border: none;
+  font-size: 17px;
+  cursor: pointer;
+}
+
+.List-area .SubTitle-area {
+  margin-left: 5px;
+}
+
+.List-area table {
+  table-layout: fixed;
+  width: 100%;
+  border: 1px solid white;
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: 0.12em;
+  font-family: "Noto Sans JP";
+}
+
+.List-area th {
+  background-color:#0277BD;
+  color: white;
+}
+.List-area tr{
+  height: 60px;
+  background-color:#F0F0F0;
+}
+
+.List-area .editbtn {
+  padding: 10px 15px 10px 25px;
+  background-color:white;
+  color: #4199CD;
+  border: 1px solid #4199CD;
+  border-radius: 8px;
+  letter-spacing: 10px;
+  cursor: pointer;
+}
+.List-area .deletebtn {
+  padding: 10px 15px 10px 25px;
+  background-color:white;
+  color: #FF8383;
+  border: 1px solid	#FF8383;
+  border-radius: 8px;
+  letter-spacing: 10px;
+  cursor: pointer;
+}
+
+
+/*================================================================================*/
+/* 体験者情報のレイアウト*/
+
+.ExperiencerList {
+  position: fixed;
+  top: 0;
+  left: calc(100% / 3);
+  width: calc(100% * 2 / 3);
+  height: 100vh; /* 画面の高さを基準にする */
+  overflow-y: auto; /* 縦スクロールを可能にする */
+  overflow-x: hidden; /* 横スクロールを防ぐ */
+}
+
+.ExperiencerList .List-area {
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+
+
+/*================================================================================*/
+/* ダッシュボードのレイアウト*/
+
+.Dashboard-List {
+  position: fixed;
+  top: 0;
+  left: calc(100% / 3);
+  width: calc(100% * 2 / 3);
+  height: 100vh; /* 画面の高さを基準にする */
+  overflow-y: auto; /* 縦スクロールを可能にする */
+  overflow-x: hidden; /* 横スクロールを防ぐ */
+}
+
+.TodayData-area .List-area {
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+.PastData-area .List-area {
+  margin-left: 30px;
+  margin-right: 30px;
+  margin-bottom: 100px;
+}
+
+.List-area .detailbtn {
+  padding: 10px 25px 10px 35px;
+  background-color:white;
+  color: #4199CD;
+  border: 1px solid #4199CD;
+  border-radius: 8px;
+  letter-spacing: 10px;
+}
+
+/*================================================================================*/
+/* 出席確認のレイアウト*/
+
+.TakeAttendance-List {
+  position: fixed;
+  top: 0;
+  left: calc(100% / 3);
+  width: calc(100% * 2 / 3);
+  height: 100vh; /* 画面の高さを基準にする */
+  overflow-y: auto; /* 縦スクロールを可能にする */
+  overflow-x: hidden; /* 横スクロールを防ぐ */
+}
+
+.TakeAttendance-List .List-area {
+  margin-left: 30px;
+  margin-right: 30px;
+  margin-bottom: 100px;
+}
+
+.present {
+  padding: 10px 8px 10px 8px;
+  background-color:white;
+  color: #4199CD;
+  border: 1px solid #4199CD;
+  border-radius: 8px;
+  letter-spacing: 0.5px;
+  font-size: 11px;
+  cursor: pointer;
+}
+
+.absent {
+  padding: 10px 8px 10px 8px;
+  background-color:white;
+  color: #FF8383;
+  border: 1px solid	#FF8383;
+  border-radius: 8px;
+  letter-spacing: 0.5px;
+  font-size: 11px;
+  cursor: pointer;
+}
+
+/*================================================================================*/
+/* 出席データ詳細のレイアウト*/
+
+.Attendance-List {
+  position: fixed;
+  overflow: auto; /* **縦スクロールを有効にする** */
+  top: 0;
+  left: calc(100% / 3);
+  width: calc(100% * 2 / 3);
+  min-height: 100vh;
+}
+
+.Attendance-List .List-area {
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+
+/*================================================================================*/
+/* 練習日・体験日設定のレイアウト*/
+
+.TrialDateSetting-List {
+  position: fixed;
+  overflow: auto; /* **縦スクロールを有効にする** */
+  top: 0;
+  left: calc(100% / 3);
+  width: calc(100% * 2 / 3);
+  min-height: 100vh;
+}
+
+.TrialDateSetting-List .List-area {
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+.TrialDateSetting-List .editbtn {
+  margin-top: 50px;
+  margin-bottom: 100px;
+  padding: 10px 30px 10px 30px;
+  background-color:#0277BD;
+  color: #ffffff;
+  border: 1px solid #0277BD;
+  border-radius: 8px;
+  letter-spacing: 00.5px;
+  cursor: pointer;
+}
+
+/*================================================================================*/
+/* チェックボックスのレイアウト */
+
+.my-taskcheck {
+  display: block;
+  position: relative;
+  margin: 1em 0;
+  padding-left: 28px;
+  cursor: pointer;
+  user-select: none; /* テキストの選択を防ぐ */
+}
+/* inputは非表示にする */
+.my-taskcheck input {
+  display: none;
+}
+
+/* □ */
+.checkmark {
+  position: absolute;
+  top: -20px; /* 上からの位置 */
+  left: 180px;
+  height: 22px; /* 大きさ */
+  width: 22px; /* 大きさ */
+  border: solid 2px #000000; /* 線 */
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+/* ✓ */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  left: 5px; /* チェックの位置 */
+  top: 1px; /* チェックの位置 */
+  width: 6px; /* チェックの大きさ */
+  height: 10px; /* チェックの大きさ */
+  border: solid #FFF;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+  opacity: 0; /* 透明にしておく */
+}
+
+/* チェックが入ったときの□ */
+.my-taskcheck input:checked + .checkmark {
+  background: #2e80ff; /* チェック時の色 */
+  border-color: #2e80ff; /* チェック時の色 */
+}
+
+/* チェックが入ったときの✓ */
+.my-taskcheck input:checked + .checkmark:after {
+  opacity: 1; /* 透明を解除 */
+}

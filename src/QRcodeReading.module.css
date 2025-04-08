@@ -1,0 +1,7 @@
+.qr {
+  position: fixed;
+  top: 0;
+  left: calc(100% / 3);
+  width: calc(100% * 2 / 3);
+  height: 100%;
+}

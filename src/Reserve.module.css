@@ -1,0 +1,21 @@
+.reserve {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.reserve > h1 {
+  margin: 0;
+}
+
+.reserve > button {
+  width: 100%;
+  margin-top: 4rem;
+  padding: 1rem;
+  background-color: rgb(86 209 199);
+  color: #fff;
+  border: 1px solid #fff;
+  border-radius: 12px;
+  letter-spacing: 2px;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
