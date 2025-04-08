@@ -15,6 +15,7 @@ import TakeAttendance from "./TakeAttendance";
 import { Thanks } from "./Thanks";
 import TrialDateSetting from "./TrialDateSetting";
 import TrialForm from "./TrialForm";
+import BudgetBook from "./BudgetBook";
 
 function App() {
   // 認証の権限があるかどうかを管理
@@ -50,6 +51,7 @@ function App() {
                     <Route path="/TrialDateSetting" element={<TrialDateSetting />} />
                     <Route path="/QRcodeReading" element={<QRcodeReading />} />
                     <Route path="/PaymentList" element={<PaymentList />} />
+                    <Route path="/BudgetBook" element={<BudgetBook />} />
                   </Routes>
                 </div>
               ) : (

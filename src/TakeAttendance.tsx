@@ -285,7 +285,7 @@ function TakeAttendance() {
              style={{ backgroundColor: LabelBackColor[index % LabelBackColor.length] }} // ボタンの数が配列内の色の数より多くなっても、繰り返して色を適用
              onClick={() => handleTeamClick(team)}
             >
-              <div>{`${team} (${count})`}</div>
+              <div>{`${team} ( ${count} )`}</div>
             </button>
           ))}
         </div>

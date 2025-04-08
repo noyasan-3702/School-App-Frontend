@@ -16,21 +16,20 @@ interface Student {
 }
 
 function AllList() {
-  const [ students, setStudents ] = useState<any>([]);                            // データベースから取得した全ての生徒の情報を管理
-  const [ isaddPopupVisible, setIsaddPopupVisible ] = useState(false);            // 新規追加ポップアップの表示・非表示を管理
-  const [ iseditPopupVisible, setIseditPopupVisible ] = useState(false);          // 編集ポップアップの表示・非表示を管理
-  const [ isdeletePopupVisible, setIsdeletePopupVisible ] = useState(false);      // 削除ポップアップの表示・非表示を管理
-  const [ teams, setTeams ] = useState<any>([]);                                  // データベース内のチーム名を管理
-  const [, setTeamName ] = useState("");                                          // 表示したいチーム名を管理
-  const [ selectedTeam, setSelectedTeam ] = useState<string | null>(null);        // 選択されたチームを管理する
-  const [ filteredStudents, setFilteredStudents ] = useState<any[]>([]);          // 表示する生徒リストを管理する
-  const [ teamCounts, setTeamCounts ] = useState<{ [team: string]: number }>({}); // チーム内の合計人数を管理する
-  const [ addStudent, setAddStudent ] = useState<Student | null>(null);           // 追加したい生徒の情報を管理する
-  const [ editStudent, setEditStudent ] = useState<Student | null>(null);         // 編集したい生徒の情報を管理する
-  const [ deleteStudent, setDeleteStudent ] = useState<Student | null>(null);     // 削除したい生徒の情報を管理する                  
-  const [ sortConfig, setSortConfig ] = useState<{ key: string; direction: "asc" | "desc" } | null>(null);
 
+  // データベースから取得した全ての生徒の情報を管理
+  const [ students, setStudents ] = useState<any>([]);
+  
+  // データベース内のチーム名を管理
+  const [ teams, setTeams ] = useState<any>([]);                                  
+  
+  // 表示したいチーム名を管理
+  const [, setTeamName ] = useState("");
 
+  // チーム内の合計人数を管理する
+  const [ teamCounts, setTeamCounts ] = useState<{ [team: string]: number }>({});
+  
+  
   /** 初回レンタリングの処理
    * 初回レンタリングの処理の処理となります。
    * 
@@ -91,6 +90,13 @@ function AllList() {
    * 編集可能項目
    * 氏名、フリガナ、学年、チーム名、連絡先（電話番号）、メールアドレス
   */
+
+  // 編集したい生徒の情報を管理する
+  const [ editStudent, setEditStudent ] = useState<Student | null>(null);
+
+   // 編集ポップアップの表示・非表示を管理
+  const [ iseditPopupVisible, setIseditPopupVisible ] = useState(false);
+
   // 編集ポップアップを開く
   const EditOpenPopup = (student: any) => {
     setEditStudent(student);      // 編集したい生徒の情報を格納
@@ -157,6 +163,13 @@ function AllList() {
    * 
    * 生徒一覧データベースに新規で生徒の情報を追加します。
   */
+
+  // 追加したい生徒の情報を管理する
+  const [ addStudent, setAddStudent ] = useState<Student | null>(null);
+
+  // 新規追加ポップアップの表示・非表示を管理
+  const [ isaddPopupVisible, setIsaddPopupVisible ] = useState(false);
+
   // 新規追加ポップアップを開く
   const AddOpenPopup = (student: any) => {
     setAddStudent(student);
@@ -229,6 +242,13 @@ function AllList() {
    * 
    * 生徒一覧データベースからテーブル内の同じ行内の生徒情報を削除します。
   */
+
+  // 削除したい生徒の情報を管理する
+  const [ deleteStudent, setDeleteStudent ] = useState<Student | null>(null);
+
+  // 削除ポップアップの表示・非表示を管理
+  const [ isdeletePopupVisible, setIsdeletePopupVisible ] = useState(false);
+
   // 削除ポップアップを開く
   const DeleteOpenPopup = (student: any) => {
     setDeleteStudent(student)
@@ -275,6 +295,9 @@ function AllList() {
   // チームラベル色の設定処理
   const LabelBackColor = [ "#FFA7A7", "	#FFD9AE", "#ACDFFF", "#8CB1FF", "	#8ACF94", "	#98E1E3", "#FFF2A6", "#ffc0cb", "#9370db", "#eee8aa" ] 
 
+  // 選択されたチームを管理する
+  const [ selectedTeam, setSelectedTeam ] = useState<string | null>(null);
+
   // チームラベルのボタン処理
   const handleTeamClick = (team: string) => {
     // 選択したチーム名を取得
@@ -295,7 +318,12 @@ function AllList() {
    * 
    * アイコンをクリックするごとに「昇順」→「降順」→「昇順」と切り替えを行います。
    */
+
   // ソートボタン処理
+  const [ filteredStudents, setFilteredStudents ] = useState<any[]>([]); 
+  const [ sortConfig, setSortConfig ] = useState<{ key: string; direction: "asc" | "desc" } | null>(null);
+  
+  // 表示する生徒リストを管理する
   const handleSort = (key: string) => {
     setSortConfig((prev) => {
       if (prev?.key === key) {

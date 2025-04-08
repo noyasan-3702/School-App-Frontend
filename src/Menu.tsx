@@ -4,6 +4,7 @@ import { BsQrCode } from "react-icons/bs";
 import { FaHouseChimney, FaPersonWalking } from "react-icons/fa6";
 import { GoPeople, GoPersonAdd } from "react-icons/go";
 import { IoSettings } from "react-icons/io5";
+import { AiFillAccountBook } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import "./App.css";
 
@@ -94,6 +95,18 @@ function Menu() {
           </label>
         </div>
       </Link>
+      <Link to="/BudgetBook">
+        <div className="link-box">
+          <label className="link-icon">
+          <IconContext.Provider value={{ color: '#000', size: '30px' }}>
+            <AiFillAccountBook />
+          </IconContext.Provider>
+          </label>
+          <label className="link-text">
+            <h1>収益管理簿</h1>
+          </label>
+        </div>
+        </Link>
     </nav>
   );
 }
