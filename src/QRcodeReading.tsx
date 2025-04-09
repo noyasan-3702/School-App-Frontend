@@ -2,6 +2,7 @@ import { addDoc, collection, getDocs, query, Timestamp, where } from "firebase/f
 import { useZxing } from "react-zxing";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import toastStyles from './ToastStyles.module.css';
 import db from "./firebase";
 import styles from "./QRcodeReading.module.css";
 
@@ -61,8 +62,8 @@ function QRcodeReading() {
 
         console.log("出席状況にデータを追加しました:", attendanceData);
         toast.success(`${studentData.Name} さんの出席が記録されました`, {
-          position: "top-right",
           autoClose: 5000,
+          className: toastStyles['customToast'],
           hideProgressBar: false,
           closeOnClick: true,
           pauseOnHover: true,
@@ -73,7 +74,7 @@ function QRcodeReading() {
       } catch (error) {
         console.error("データ処理中にエラーが発生しました:", error);
         toast.error("エラーが発生しました。再試行してください。", {
-          position: "top-right",
+          position: 'top-center',
           autoClose: 5000,
           hideProgressBar: false,
           closeOnClick: true,
@@ -90,7 +91,10 @@ function QRcodeReading() {
     <div className={styles.qr}>
       <video ref={ref} />
       <p>QRコードを読み取ってください</p>
-      <ToastContainer />
+      <ToastContainer 
+        className={toastStyles['customToastWrapper']}
+        position="top-center"
+      />
     </div>
   );
 }
