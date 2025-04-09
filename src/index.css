@@ -271,12 +271,14 @@ a:-webkit-any-link  {
 }
 
 .link-icon {
+  margin-top: 10px;
   margin-left: 50px;
-  margin-right: 35px;
+  
 }
 
 .link-box h1 {
   color:#000 ;
+  padding-left: 35px;
 }
 
 /*================================================================================*/
@@ -439,12 +441,11 @@ a:-webkit-any-link  {
 
 .TakeAttendance-List {
   position: fixed;
+  overflow: auto; /* **縦スクロールを有効にする** */
   top: 0;
   left: calc(100% / 3);
   width: calc(100% * 2 / 3);
   height: 100vh; /* 画面の高さを基準にする */
-  overflow-y: auto; /* 縦スクロールを可能にする */
-  overflow-x: hidden; /* 横スクロールを防ぐ */
 }
 
 .TakeAttendance-List .List-area {
@@ -484,7 +485,7 @@ a:-webkit-any-link  {
   top: 0;
   left: calc(100% / 3);
   width: calc(100% * 2 / 3);
-  min-height: 100vh;
+  height: 100vh;
 }
 
 .Attendance-List .List-area {
@@ -502,12 +503,13 @@ a:-webkit-any-link  {
   top: 0;
   left: calc(100% / 3);
   width: calc(100% * 2 / 3);
-  min-height: 100vh;
+  height: 100vh;
 }
 
 .TrialDateSetting-List .List-area {
   margin-left: 30px;
   margin-right: 30px;
+  margin-bottom: 0px;
 }
 
 .TrialDateSetting-List .editbtn {
@@ -521,9 +523,6 @@ a:-webkit-any-link  {
   letter-spacing: 00.5px;
   cursor: pointer;
 }
-
-/*================================================================================*/
-/* チェックボックスのレイアウト */
 
 /*================================================================================*/
 /* チェックボックスのレイアウト */
