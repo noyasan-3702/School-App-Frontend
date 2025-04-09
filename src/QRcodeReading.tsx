@@ -73,7 +73,7 @@ function QRcodeReading() {
 
         console.log("出席状況にデータを追加しました:", attendanceData);
         toast.success(`${studentData.Name} さんの出席が記録されました`, {
-          autoClose: 5000,
+          autoClose: 3000,
           className: toastStyles['customToast'],
           hideProgressBar: false,
           closeOnClick: true,
@@ -81,12 +81,13 @@ function QRcodeReading() {
           draggable: true,
           progress: undefined,
           theme: "colored",
+
         });
       } catch (error) {
         console.error("データ処理中にエラーが発生しました:", error);
         toast.error("エラーが発生しました。再試行してください。", {
           position: 'top-center',
-          autoClose: 5000,
+          autoClose: 3000,
           hideProgressBar: false,
           closeOnClick: true,
           pauseOnHover: true,
@@ -95,6 +96,7 @@ function QRcodeReading() {
           theme: "colored",
         });
       } finally {
+
         // 2秒後に処理可能状態に戻す（連続読み取り防止）
         setTimeout(() => setIsProcessing(false), 2000);
       }
