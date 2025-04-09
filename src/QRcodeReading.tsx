@@ -73,7 +73,7 @@ function QRcodeReading() {
 
         console.log("出席状況にデータを追加しました:", attendanceData);
         toast.success(`${studentData.Name} さんの出席が記録されました`, {
-          autoClose: 10000,
+          autoClose: 5000,
           className: toastStyles['customToast'],
           hideProgressBar: false,
           closeOnClick: true,
@@ -86,7 +86,7 @@ function QRcodeReading() {
         console.error("データ処理中にエラーが発生しました:", error);
         toast.error("エラーが発生しました。再試行してください。", {
           position: 'top-center',
-          autoClose: 10000,
+          autoClose: 5000,
           hideProgressBar: false,
           closeOnClick: true,
           pauseOnHover: true,
