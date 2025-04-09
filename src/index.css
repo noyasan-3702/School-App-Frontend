@@ -327,13 +327,15 @@ a:-webkit-any-link  {
 
 .button-area .team-label {
   align-items: center; /* 垂直方向に中央揃え */
-  padding: 10px 30px 10px 20px;
+  padding: 10px 20px 10px 20px;
+  margin: 5px 20px 5px 5px;
   border-radius: 8px;
-  margin-left: 5px;
-  margin-right: 20px;
   border: none;
   font-size: 17px;
   cursor: pointer;
+  font-size: 17px;
+  font-weight: bold;
+  font-family: "Noto Sans JP";
 }
 
 .List-area .SubTitle-area {
@@ -523,7 +525,10 @@ a:-webkit-any-link  {
 /*================================================================================*/
 /* チェックボックスのレイアウト */
 
-.my-taskcheck {
+/*================================================================================*/
+/* チェックボックスのレイアウト */
+
+.my-taskcheck1 {
   display: block;
   position: relative;
   margin: 1em 0;
@@ -531,6 +536,15 @@ a:-webkit-any-link  {
   cursor: pointer;
   user-select: none; /* テキストの選択を防ぐ */
 }
+.my-taskcheck {
+  display: flex;
+  justify-content: center; /* チェックボックスを中央に配置 */
+  align-items: center; 
+  padding-left: 0; /* 左の余白を削除 */
+  margin: 0; /* 余白をリセット */
+}
+
+
 /* inputは非表示にする */
 .my-taskcheck input {
   display: none;

@@ -51,31 +51,33 @@ export const PaymentList = () => {
       {paymentList.length === 0 ? (
         <p>データがありません</p>
       ) : (
-        <table className={styles.table} border={1}>
-          <thead>
-            <tr>
-              <th>氏名</th>
-              <th>フリガナ</th>
-              <th>学年</th>
-              <th>参加予定日</th>
-              <th>決済日</th>
-            </tr>
-          </thead>
-          <tbody>
-            {/* 取得したデータをマッピングしてテーブル表示 */}
-            {paymentList.map((user, index) => (
-              <tr key={index}>
-                <td>{user.Name}</td>
-                <td>{user.Kana}</td>
-                <td>{user.Grade}</td>
-                <td>{user.joinDate}</td>
-                <td>
-                  {new Date(user.PaymentDate).toLocaleDateString("ja-JP")}
-                </td>
+        <div className="List-area">
+          <table>
+            <thead>
+              <tr>
+                <th>氏名</th>
+                <th>フリガナ</th>
+                <th>学年</th>
+                <th>参加予定日</th>
+                <th>決済日</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {/* 取得したデータをマッピングしてテーブル表示 */}
+              {paymentList.map((user, index) => (
+                <tr key={index}>
+                  <td>{user.Name}</td>
+                  <td>{user.Kana}</td>
+                  <td>{user.Grade}</td>
+                  <td>{user.joinDate}</td>
+                  <td>
+                    {new Date(user.PaymentDate).toLocaleDateString("ja-JP")}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       )}
     </div>
   );
