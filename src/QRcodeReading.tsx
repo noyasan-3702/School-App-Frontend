@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { addDoc, collection, getDocs, query, Timestamp, where } from "firebase/firestore";
 import { useZxing } from "react-zxing";
 import { ToastContainer, toast } from 'react-toastify';
@@ -17,8 +18,18 @@ import styles from "./QRcodeReading.module.css";
 //////////////////////////////////////////////////
 
 function QRcodeReading() {
+
+  // 読み取り状態を管理
+  const [isProcessing, setIsProcessing] = useState(false);
   const { ref } = useZxing({
     onDecodeResult: async (result) => {
+
+      // 読み取り中なのか判別
+      if (isProcessing) {
+        return; // すでに読み取り中ならスキップ
+      }
+    
+      setIsProcessing(true); // 読み取り開始！
       try {
         // QRコードから URL を取得
         const url = result.getText();
@@ -58,7 +69,7 @@ function QRcodeReading() {
           Team: studentData.Team,
         };
 
-        // await addDoc(joinSituation, attendanceData);
+        await addDoc(joinSituation, attendanceData);
 
         console.log("出席状況にデータを追加しました:", attendanceData);
         toast.success(`${studentData.Name} さんの出席が記録されました`, {
@@ -83,6 +94,9 @@ function QRcodeReading() {
           progress: undefined,
           theme: "colored",
         });
+      } finally {
+        // 2秒後に処理可能状態に戻す（連続読み取り防止）
+        setTimeout(() => setIsProcessing(false), 2000);
       }
     },
   });
