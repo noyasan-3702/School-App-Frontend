@@ -28,6 +28,7 @@
     "react-icons": "^5.5.0",
     "react-router-dom": "^7.1.5",
     "react-slick": "^0.30.3",
+    "react-toastify": "^11.0.5",
     "react-zxing": "^2.1.0",
     "slick-carousel": "^1.8.1",
     "styled-components": "^6.1.15"

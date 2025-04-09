@@ -98,9 +98,9 @@ function Menu() {
       <Link to="/BudgetBook">
         <div className="link-box">
           <label className="link-icon">
-          <IconContext.Provider value={{ color: '#000', size: '30px' }}>
-            <AiFillAccountBook />
-          </IconContext.Provider>
+            <IconContext.Provider value={{ color: '#000', size: '30px' }}>
+              <AiFillAccountBook />
+            </IconContext.Provider>
           </label>
           <label className="link-text">
             <h1>収益管理簿</h1>

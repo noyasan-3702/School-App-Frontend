@@ -1,5 +1,7 @@
 import { addDoc, collection, getDocs, query, Timestamp, where } from "firebase/firestore";
 import { useZxing } from "react-zxing";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import db from "./firebase";
 import styles from "./QRcodeReading.module.css";
 
@@ -58,10 +60,28 @@ function QRcodeReading() {
         await addDoc(joinSituation, attendanceData);
 
         console.log("出席状況にデータを追加しました:", attendanceData);
-        alert(`${studentData.Name} さんの出席が記録されました`);
+        toast.success(`${studentData.Name} さんの出席が記録されました`, {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "colored",
+        });
       } catch (error) {
         console.error("データ処理中にエラーが発生しました:", error);
-        alert("エラーが発生しました。再試行してください。");
+        toast.error("エラーが発生しました。再試行してください。", {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "colored",
+        });
       }
     },
   });
@@ -70,6 +90,7 @@ function QRcodeReading() {
     <div className={styles.qr}>
       <video ref={ref} />
       <p>QRコードを読み取ってください</p>
+      <ToastContainer />
     </div>
   );
 }
