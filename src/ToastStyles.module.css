@@ -3,13 +3,14 @@
   font-size: 1.2rem;
   padding: 20px 30px;
   text-align: center;
-  min-width: 300px;
+  min-width: 500px;
+  height: 200px;
 }
 
 .customToastWrapper {
   position: fixed !important;
   top: 50% !important;
-  left: 50% !important;
+  left: 60% !important;
   transform: translate(-50%, -50%) !important;
   z-index: 9999 !important;
 }
